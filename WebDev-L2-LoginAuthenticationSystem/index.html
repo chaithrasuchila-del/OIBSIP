@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Login Authentication System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Registration Page -->
+        <div id="registerPage" class="page">
+            <h1>Create Account</h1>
+            <p class="subtitle">Register to get started</p>
+
+            <div class="form-group">
+                <label for="registerUsername">Username</label>
+                <input type="text" id="registerUsername"
+                       placeholder="Enter username">
+            </div>
+
+            <div class="form-group">
+                <label for="registerEmail">Email</label>
+                <input type="email" id="registerEmail"
+                       placeholder="Enter email">
+            </div>
+
+            <div class="form-group">
+                <label for="registerPassword">Password</label>
+                <input type="password" id="registerPassword"
+                       placeholder="Minimum 8 characters and 1 number">
+            </div>
+
+            <button onclick="registerUser()">Register</button>
+
+            <p id="registerMessage" class="message"
+               aria-live="polite"></p>
+
+            <div class="switch">
+                Already have an account?
+                <a href="#" onclick="showLogin(); return false;">
+                    Login
+                </a>
+            </div>
+        </div>
+
+        <!-- Login Page -->
+        <div id="loginPage" class="page">
+            <h1>Welcome Back</h1>
+            <p class="subtitle">Login to your account</p>
+
+            <div class="form-group">
+                <label for="loginUser">Username or Email</label>
+                <input type="text" id="loginUser"
+                       placeholder="Enter username or email">
+            </div>
+
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword"
+                       placeholder="Enter password">
+            </div>
+
+            <button onclick="loginUser()">Login</button>
+
+            <p id="loginMessage" class="message"
+               aria-live="polite"></p>
+
+            <div class="switch">
+                Don't have an account?
+                <a href="#" onclick="showRegister(); return false;">
+                    Register
+                </a>
+            </div>
+        </div>
+
+        <!-- Protected Dashboard -->
+        <div id="dashboardPage" class="page dashboard">
+            <div class="welcome-icon">✓</div>
+            <h1>Dashboard</h1>
+            <h2 id="welcomeMessage"></h2>
+
+            <p>You have successfully logged in.</p>
+            <p class="protected">This is your protected page.</p>
+
+            <button id="logoutBtn" onclick="logoutUser()">
+                Logout
+            </button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
